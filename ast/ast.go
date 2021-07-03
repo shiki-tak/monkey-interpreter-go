@@ -13,7 +13,7 @@ type Statement interface {
 
 type Expression interface {
 	Node
-	expressionNde()
+	expressionNode()
 }
 
 type Program struct {
@@ -34,7 +34,7 @@ type Identifier struct {
 	Value string
 }
 
-func (i *Identifier) expressionNde()       {}
+func (i *Identifier) expressionNode()      {}
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
 
 type ReturnStatement struct {
