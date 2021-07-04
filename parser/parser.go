@@ -108,7 +108,7 @@ func (p *Parser) parseStatement() ast.Statement {
 	case token.RETURN:
 		return p.parseReturnStatement()
 	default:
-		return p.ParseExpressionStatement()
+		return p.parseExpressionStatement()
 	}
 }
 
@@ -143,7 +143,7 @@ func (p *Parser) parseReturnStatement() *ast.ReturnStatement {
 	return stmt
 }
 
-func (p *Parser) ParseExpressionStatement() *ast.ExpressionStatement {
+func (p *Parser) parseExpressionStatement() *ast.ExpressionStatement {
 	stmt := &ast.ExpressionStatement{Token: p.curToken}
 
 	stmt.Expression = p.parseExpression(LOWEST)
